@@ -21,12 +21,13 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "ethereumjs-util": "^6.1.0",
     "express": "^4.17.1",
     "passport": "^0.4.0",
     "passport-web3": "^0.1.7",
     "react": "16.8.6",
     "react-dom": "16.8.6",
-    "react-scripts": "^3.0.1"
+    "react-scripts": "^3.0.1"  
   },
   "files": [
     "lib",
