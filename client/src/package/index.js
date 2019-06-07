@@ -10,6 +10,7 @@ class ComponentWithReactWeb3Auth extends Component {
     }
 
     async componentDidMount() {
+      console.log(this.constructor.name + " componentDidMount");
     }
 
     render() {
