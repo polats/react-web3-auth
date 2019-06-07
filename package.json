@@ -14,10 +14,10 @@
     "build": "cross-env BABEL_ENV=production babel client/src/package --out-dir lib",
     "prepublish": "npm run clean && npm run lint && npm run test && npm run build",
     "client": "cd client && npm start",
-    "server": "nodemon server.js",
+    "server": "node server.js",
     "react:build": "cd client && npm run build",
     "dev": "concurrently --kill-others-on-fail \"npm run client\" \"npm run server\"",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run react:build",
     "start": "npm run heroku-postbuild && node server.js"
   },
   "dependencies": {
