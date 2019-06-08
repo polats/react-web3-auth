@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { Component } from 'react';
 import { ContractWrappers, MetamaskSubprovider, RPCSubprovider, Web3ProviderEngine } from '0x.js';
 import { Web3Wrapper } from '@0x/web3-wrapper';
 import { SignerSubprovider } from '@0x/subproviders';
@@ -9,8 +9,8 @@ import { Nav } from './nav';
 
 import * as _ from 'lodash';
 
-// import ComponentWithReactWeb3Auth from 'react-web3-auth'; // replace './package' with package name when using via npm install
-import ComponentWithReactWeb3Auth from './package';
+// import {ProviderStatus, LoginButton} from 'react-web3-auth'; // import when using via npm install
+import {ProviderStatus, LoginButton} from './package';
 
 const ethUtil = require('ethereumjs-util');
 const web3 = window.web3;
@@ -30,7 +30,7 @@ const msg = ethUtil.bufferToHex(new Buffer(rawMessage, 'utf8'));
 var promptMetamask;
 var address;
 
-class Demo extends ComponentWithReactWeb3Auth {
+class Demo extends Component {
   constructor(props) {
     super(props);
 
@@ -134,6 +134,8 @@ class Demo extends ComponentWithReactWeb3Auth {
     }
     return (
         <div style={{ paddingLeft: 30, paddingRight: 30, paddingBottom: 30 }}>
+            <ProviderStatus/>
+            <LoginButton/>
             <Nav web3Wrapper={this.state.web3Wrapper} />
             <Content className="container">
                 {this.state.web3 && (
