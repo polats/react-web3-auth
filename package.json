@@ -1,6 +1,6 @@
 {
   "name": "react-web3-auth",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "React implementation of web3 authentication using passport.js and passport-web3",
   "main": "./lib/index.js",
   "scripts": {
