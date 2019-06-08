@@ -34,7 +34,7 @@ export class ProviderStatus extends React.Component {
             }
         }
     }
-    renderNetworkIndicator(): React.ReactNode {
+    renderNetworkIndicator() {
         const { networkId } = this.state;
         if (networkId) {
             const networkName = networkIdToNetwork[networkId] || Network.Unknown;
@@ -45,8 +45,8 @@ export class ProviderStatus extends React.Component {
         }
         return <Tag isColor="danger">Disconnected</Tag>;
     }
-    
-    render(): React.ReactNode {
+
+    render() {
         const networkRender = this.renderNetworkIndicator();
         return (
             <Navbar style={{ zIndex: -1 }}>

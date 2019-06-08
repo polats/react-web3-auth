@@ -11,7 +11,7 @@
     "test:watch": "npm test -- --watch",
     "cover": "nyc --check-coverage npm run test:only",
     "lint": "eslint client/src/package",
-    "build": "cross-env BABEL_ENV=production babel client/src/package --out-dir lib",
+    "build": "cross-env BABEL_ENV=production babel  --root-mode upward client/src/package --out-dir lib",
     "prepublish": "npm run clean && npm run lint && npm run test && npm run build",
     "client": "cd client && npm start",
     "server": "node server.js",
