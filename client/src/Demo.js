@@ -27,6 +27,7 @@ const networkToRPCURI = {
 // The contents of the message can be anything
 const rawMessage = 'Some message';
 const msg = ethUtil.bufferToHex(new Buffer(rawMessage, 'utf8'));
+var promptMetamask;
 var address;
 
 class Demo extends ComponentWithReactWeb3Auth {
@@ -54,6 +55,7 @@ class Demo extends ComponentWithReactWeb3Auth {
           if (!_.isUndefined(injectedWeb3IfExists) && !_.isUndefined(injectedWeb3IfExists.currentProvider)) {
               injectedProviderIfExists = injectedWeb3IfExists.currentProvider;
           } else {
+              promptMetamask = true;
               return undefined;
           }
       }
@@ -124,7 +126,11 @@ class Demo extends ComponentWithReactWeb3Auth {
 
   render() {
     if (!this.state || !this.state.contractWrappers || !this.state.web3Wrapper) {
-        return <div />;
+        return (
+          <div>
+            {promptMetamask && <InstallMetamask />}
+          </div>
+        );
     }
     return (
         <div style={{ paddingLeft: 30, paddingRight: 30, paddingBottom: 30 }}>
