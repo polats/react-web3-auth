@@ -71,6 +71,7 @@ export default class ComponentWithReactWeb3Auth extends Component {
     }
 
     componentDidUpdate() {
+      console.log(this.state);
     }
 
     async componentDidMount() {
