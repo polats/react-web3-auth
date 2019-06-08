@@ -49,6 +49,7 @@ export class Nav extends React.Component<NavProps, NavState> {
             <Navbar style={{ zIndex: -1 }}>
                 <NavbarBrand>
                     <NavbarItem>
+                        <strong> Network Status </strong>
                         <NavbarItem>{networkRender}</NavbarItem>
                     </NavbarItem>
                 </NavbarBrand>
