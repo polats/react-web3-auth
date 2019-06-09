@@ -23,9 +23,6 @@ export class LoginButton extends Component {
 
     handleSignature(err, signed) {
       if (!err) {
-        console.log("address", address);
-        console.log("msg", msg);
-        console.log("signed", signed);
 
         const fetchOpts = {
           method: 'POST',
@@ -40,10 +37,10 @@ export class LoginButton extends Component {
             throw Error(res.statusText);
           }
         }).then(json => {
-          console.log("succeed", json);
+          console.log("login success: ", json);
           // Auth succeeded
         }).catch(err => {
-          console.log("failed", err);
+          console.log("login failed: ", err);
           // Auth failed
         })
       }
