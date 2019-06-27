@@ -9,7 +9,7 @@ React implementation of web3 authentication using passport.js and passport-web3
 
 # Demo
 
-Check it out on [CodeSandbox](https://codesandbox.io/s/github/polats/react-web3-auth)
+[![Demo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/polats/react-web3-auth)
 
 # Installation
 
